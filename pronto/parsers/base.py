@@ -41,7 +41,7 @@ class BaseParser(abc.ABC):
             if s in {"ftp", "http", "https"} or os.path.exists(ref):
                 url = ref
             else:
-                for ext in ["", ".obo", ".json", ".owl"]:
+                for ext in ["", ".obo", ".json", ".owl", ".ttl"]:
                     if os.path.exists(os.path.join(basepath, f"{ref}{ext}")):
                         url = os.path.join(basepath, f"{ref}{ext}")
                         break
